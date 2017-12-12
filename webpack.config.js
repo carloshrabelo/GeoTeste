@@ -4,7 +4,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin")
 module.exports = function(env){
     const nodeEnv = env && env.prod ? 'production' : 'development';
     const isProd = nodeEnv === 'production';
-    
+
     return {
         entry: isProd ? [
             './src/index.js'
@@ -40,7 +40,11 @@ module.exports = function(env){
                         use: ['css-loader', 'sass-loader'],
                         fallback: "style-loader"
                     })
-                }
+                },
+                {
+                    test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+                    loader: 'url-loader?limit=100000'
+                }               
             ],
         },
         resolve: {

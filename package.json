@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server -d --env.platform=default --progress --hot",
-    "build": "cross-env NODE_ENV=production webpack --hot  --env.prod=true",
+    "build": "cross-env webpack --hot  --env.prod=true",
     "start": "npm run dev"
   },
   "babel": {
@@ -39,17 +39,23 @@
     "eslint-loader": "^1.9.0",
     "eslint-plugin-react": "^7.1.0",
     "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^1.1.5",
     "identity-obj-proxy": "^3.0.0",
+    "node-sass": "^4.7.2",
     "prop-types": "^15.5.10",
     "react-hot-loader": "^1.3.1",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.2",
     "react-test-renderer": "^15.6.1",
+    "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
+    "url-loader": "^0.6.2",
     "webpack": "^3.3.0",
     "webpack-dev-server": "^2.5.1"
   },
   "dependencies": {
+    "font-awesome": "^4.7.0",
+    "normalize.css": "^7.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   }

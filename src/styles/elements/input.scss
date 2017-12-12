@@ -1,0 +1,24 @@
+$icon-wrapper : 1em;
+
+input{
+    &[type="text"],
+    &[type="search"]{
+        padding: $padding;
+        border-radius:5px;
+        border: 1px $border solid;
+        box-shadow: 0px 1px 1px 0px darken( $border, 10% );
+        &:focus{
+            outline-color: $primary;        
+        }
+    }    
+    &[type="search"]{
+        &:after{
+            content: " - Remember this";
+            position: relative;
+            width: 1em;
+            height: 1em;
+            background: red;
+
+        }
+    }
+}
