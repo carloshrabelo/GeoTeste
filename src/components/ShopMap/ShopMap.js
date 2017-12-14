@@ -1,6 +1,5 @@
 import React from 'react'
 import {Component} from 'react';
-import {observer} from 'mobx-react';
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
 import L from 'leaflet'
 import './ShopMap.scss';

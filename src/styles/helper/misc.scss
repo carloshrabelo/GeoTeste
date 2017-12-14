@@ -10,9 +10,6 @@ $icon-wrapper : 1em;
 .is-right {
     right: 0;
 }
-.text-error{
-    color: $error
-}
 
 .has-icons-left,
 .has-icons-right {
@@ -35,4 +32,12 @@ $icon-wrapper : 1em;
 }
 .has-icons-left input{
     padding-left: $icon-wrapper;
+}
+
+.squad{
+    >*{
+        border: $border;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+    }
 }
