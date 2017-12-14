@@ -5,7 +5,6 @@ $text : #4b4b4b;
 
 $bg : #eff2f2;
 
-$border : #e5e5e5;
 
 $placeholder-color : #c5c5c5;
 
@@ -15,3 +14,11 @@ $link-color--active : $text;
 $padding-y: 5px;
 $padding-x: 10px;
 $padding: $padding-y $padding-x;
+
+$box-shadow: 1px 1px 1px $placeholder-color;
+
+$border-color : #e5e5e5;
+$border-width : 1px;
+$border-style : solid;
+$border-radius : 5px;
+$border : $border-color $border-width $border-style;
