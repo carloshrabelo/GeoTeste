@@ -1,0 +1,15 @@
+.table{
+    border-spacing: 0px;    
+    width: 100%;
+    background: #fff;
+    border:$border;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    th,
+    td{
+        padding: $padding; 
+    }
+    td{
+        border-top: $border;     
+    }
+}
