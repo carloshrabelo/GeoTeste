@@ -13,12 +13,11 @@ let shopStore = new ShopStore();
 @observer
 export default class App extends React.Component {
 
-  handleFilterName(event) {
-    shopStore.filter.name = event.target.value
+  handleFilterByName(event) {
+    shopStore.filter = event.target.value
   }
-  handleFilterRevenue(event){
-    console.info(event.target.value)
-    shopStore.filter.revenue = event.target.value
+  handleMinimumRevenue(event){
+    shopStore.minimumRevenue = event.target.value
   }
 
   render() {
@@ -31,7 +30,7 @@ export default class App extends React.Component {
           <div className="columns content-end">
             <section style={{background: '#f0f'}} className="column">
               <div className="has-icons-right">
-                <input type="search" placeholder="Pesquisa" value={shopStore.filter.name} onChange={this.handleFilterName.bind(this)} />
+                <input type="search" placeholder="Pesquisa" value={shopStore.filter} onChange={this.handleFilterByName.bind(this)} />
                 <span className="icon is-small is-right">
                   <i className="fa fa-search"></i>
                 </span>
@@ -39,12 +38,12 @@ export default class App extends React.Component {
             </section>
             <section style={{background: '#00f'}} className="column">
               <label htmlFor="faturamento"> Faturamento mínimo esperado</label>
-              <input id="faturamento" type="number" placeholder="Pesquisa" value={shopStore.filter.revenue} onChange={this.handleFilterRevenue.bind(this)} />
+              <input id="faturamento" type="number" placeholder="Pesquisa" value={shopStore.minimumRevenue} onChange={this.handleMinimumRevenue.bind(this)} />
             </section>
           </div>
           <div className="columns">
             <section style={{background: '#f00', minHeight: '250px'}} className="column">
-              <ShopTable shopStore={shopStore} />
+              <ShopTable shopStore={shopStore} minimumRevenue={shopStore.minimumRevenue} />
             </section>
             <section style={{background: '#0ff'}} className="column">
             </section>

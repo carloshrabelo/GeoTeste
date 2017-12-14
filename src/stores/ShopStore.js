@@ -4,13 +4,11 @@ import { stores } from '../mock/data.json';
 export default class ShopStore{
     @observable _shops = stores
     @observable currentPage = 1
-    @observable filter = {
-        name : '',
-        revenue : 15000
-    }
+    @observable filter = ''
     @observable itensPerPage = 10
+    @observable minimumRevenue = 15000
 
-    doFilter = store => store.name.toUpperCase().indexOf(this.filter.name.toUpperCase()) != -1 && store.revenue >= this.filter.revenue
+    doFilter = store => store.name.toUpperCase().indexOf(this.filter.toUpperCase()) != -1
     setPage = page =>  this.currentPage = page
 
     @computed get pages() {
