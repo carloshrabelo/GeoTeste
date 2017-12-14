@@ -30,7 +30,7 @@ export default class App extends React.Component {
         </header>
         <main>
           <div className="columns content-end">
-            <section style={{background: '#f0f'}} className="column">
+            <section className="column">
               <div className="has-icons-right">
                 <input type="search" placeholder="Pesquisa" value={shopStore.filter} onChange={this.handleFilterByName.bind(this)} />
                 <span className="icon is-small is-right">
@@ -38,24 +38,24 @@ export default class App extends React.Component {
                 </span>
               </div>
             </section>
-            <section style={{background: '#00f'}} className="column">
+            <section className="column">
               <label htmlFor="faturamento"> Faturamento mínimo esperado</label>
-              <input id="faturamento" type="number" placeholder="Pesquisa" value={shopStore.minimumRevenue} onChange={this.handleMinimumRevenue.bind(this)} />
+              <input id="faturamento" className="text-right" type="number" placeholder="Pesquisa" value={shopStore.minimumRevenue} onChange={this.handleMinimumRevenue.bind(this)} />
             </section>
           </div>
           <div className="columns">
-            <section style={{background: '#f00', minHeight: '250px'}} className="column">
+            <section className="column squad">
               <ShopTable shopStore={shopStore} minimumRevenue={shopStore.minimumRevenue} />
             </section>
-            <section style={{background: '#0ff'}} className="column">
+            <section className="column squad">
               <ShopMap shopStore={shopStore} minimumRevenue={shopStore.minimumRevenue} />
             </section>
           </div>
           <div className="columns">
-            <section style={{background: '#f0f'}} className="column text-center">
+            <section className="column text-center">
               <Pagination onChanged={ shopStore.setPage } pages={ shopStore.pages } currentPage={shopStore.currentPage }/>
             </section>
-            <section style={{background: '#00f'}} className="column">
+            <section className="column">
             </section>   
           </div>
         </main>
