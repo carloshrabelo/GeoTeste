@@ -4,9 +4,11 @@ import 'font-awesome/css/font-awesome.css';
 import 'normalize.css/normalize.css';
 import './App.scss';
 import { ShopTable } from './components';
+import { Pagination } from './common';
 import {observer} from 'mobx-react';
 
 import ShopStore from './stores/ShopStore';
+let shopStore = new ShopStore();
 @observer
 export default class App extends React.Component {
   render() {
@@ -41,6 +43,7 @@ export default class App extends React.Component {
           <div className="columns">
             <section style={{background: '#f0f'}} className="column text-center">
               pagination
+                <Pagination onChanged={ shopStore.setPage } pages={ shopStore.pages } currentPage={shopStore.currentPage }/>
             </section>
             <section style={{background: '#00f'}} className="column">
             </section>
