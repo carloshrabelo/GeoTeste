@@ -6,7 +6,7 @@ export default class ShopStore{
     @observable currentPage = 1
     @observable filter = {
         name : '',
-        revenue : 0
+        revenue : 15000
     }
     @observable itensPerPage = 10
 
