@@ -1,8 +1,10 @@
 $icon-wrapper : 1em;
 
 input{
+    &[type="number"],
     &[type="text"],
     &[type="search"]{
+        width: 100%;
         padding: $padding;
         border-radius: $border-radius;
         border: $border;
@@ -11,14 +13,4 @@ input{
             outline-color: $primary;        
         }
     }    
-    &[type="search"]{
-        &:after{
-            content: " - Remember this";
-            position: relative;
-            width: 1em;
-            height: 1em;
-            background: red;
-
-        }
-    }
 }
