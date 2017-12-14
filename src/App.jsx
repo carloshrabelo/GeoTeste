@@ -9,8 +9,14 @@ import {observer} from 'mobx-react';
 
 import ShopStore from './stores/ShopStore';
 let shopStore = new ShopStore();
+
 @observer
 export default class App extends React.Component {
+
+  handleFilterTextChange(event) {
+    shopStore.filter = event.target.value
+  }
+
   render() {
     return (
       <div id="app">
@@ -21,7 +27,7 @@ export default class App extends React.Component {
           <div className="columns content-end">
             <section style={{background: '#f0f'}} className="column">
               <div className="has-icons-right">
-                <input type="search" placeholder="Pesquisa"/>
+                <input type="search" placeholder="Pesquisa" value={shopStore.filter} onChange={this.handleFilterTextChange.bind(this)} />
                 <span className="icon is-small is-right">
                   <i className="fa fa-search"></i>
                 </span>
@@ -33,7 +39,6 @@ export default class App extends React.Component {
             </section>
           </div>
           <div className="columns">
-            <section style={{background: '#f00', height: '250px'}} className="column">
             <section style={{background: '#f00', minHeight: '250px'}} className="column">
               <ShopTable shopStore={shopStore} />
             </section>
@@ -42,12 +47,10 @@ export default class App extends React.Component {
           </div>
           <div className="columns">
             <section style={{background: '#f0f'}} className="column text-center">
-              pagination
-                <Pagination onChanged={ shopStore.setPage } pages={ shopStore.pages } currentPage={shopStore.currentPage }/>
+              <Pagination onChanged={ shopStore.setPage } pages={ shopStore.pages } currentPage={shopStore.currentPage }/>
             </section>
             <section style={{background: '#00f'}} className="column">
-            </section>
-            
+            </section>   
           </div>
         </main>
       </div>);

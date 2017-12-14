@@ -7,7 +7,7 @@ export default class ShopStore{
     @observable filter = ''
     @observable itensPerPage = 10
 
-    doFilter = store => store.name.indexOf(this.filter) != -1
+    doFilter = store => store.name.toUpperCase().indexOf(this.filter.toUpperCase()) != -1
     setPage = page =>  this.currentPage = page
 
     @computed get pages() {
