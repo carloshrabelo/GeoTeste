@@ -4,11 +4,11 @@ import {observer} from 'mobx-react';
 import './ShopTable.scss';
 
 function Row(props) {
-    const { name, revenue} = props
+    const { name, revenue, minimumRevenue} = props
     return (
         <tr>
-            <td>{props.name}</td>
-            <td>{props.revenue}</td>
+            <td>{name}</td>
+            <td className={ minimumRevenue > revenue ? 'text-error' : ''}>{revenue}</td>
         </tr>
     )
 }
@@ -16,6 +16,7 @@ function Row(props) {
 @observer
 export class ShopTable extends Component {
     render() {
+        const { minimumRevenue, shopStore } = this.props
         return  <table className="table">
                     <thead>
                     <tr>
@@ -24,8 +25,8 @@ export class ShopTable extends Component {
                     </tr>
                     </thead>
                     <tbody>
-                    {this.props.shopStore.shops.map( (shop, index) =>
-                        <Row key={index} name={shop.name} revenue={shop.revenue}></Row>
+                    {shopStore.shops.map( (shop, index) =>
+                        <Row key={index} name={shop.name} revenue={shop.revenue} minimumRevenue={minimumRevenue}></Row>
                     )}
                     </tbody>
                 </table>
