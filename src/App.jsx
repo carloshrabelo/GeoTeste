@@ -19,7 +19,9 @@ export default class App extends React.Component {
     shopStore.filter = event.target.value
   }
   handleMinimumRevenue(event){
-    shopStore.minimumRevenue = event.target.value
+    let number = event.target.value
+    if(!isNaN(number))
+    shopStore.minimumRevenue = number
   }
 
   render() {

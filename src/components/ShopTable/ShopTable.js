@@ -1,16 +1,19 @@
 import React from 'react'
 import {Component} from 'react';
 import {observer} from 'mobx-react';
+import PropTypes from 'prop-types';
 import './ShopTable.scss';
 
-function Row(props) {
-    const { name, revenue, minimumRevenue} = props
-    return (
-        <tr>
-            <td>{name}</td>
-            <td className={ minimumRevenue > revenue ? 'text-error' : ''}>{revenue}</td>
-        </tr>
-    )
+export class Row extends Component {
+    render() {
+        const { name, revenue, minimumRevenue} = this.props
+        return (
+            <tr>
+                <td>{name}</td>
+                <td className={ minimumRevenue > revenue ? 'text-error' : ''}>{revenue}</td>
+            </tr>
+        )
+    }
 }
 
 @observer
@@ -31,4 +34,8 @@ export class ShopTable extends Component {
                     </tbody>
                 </table>
     }
+}
+ShopTable.propTypes = {
+    shopStore:PropTypes.object,
+    minimumRevenue: PropTypes.number
 }
