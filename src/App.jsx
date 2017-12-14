@@ -1,9 +1,11 @@
 import React from 'react';
-import './styles/main.scss';
-import 'font-awesome/css/font-awesome.css';
 import 'normalize.css/normalize.css';
+import 'font-awesome/css/font-awesome.css';
+import 'lato-webfont/lato.min.css';
+import 'leaflet/dist/leaflet.css';
+import './styles/main.scss';
 import './App.scss';
-import { ShopTable } from './components';
+import { ShopTable, ShopMap } from './components';
 import { Pagination } from './common';
 import {observer} from 'mobx-react';
 
@@ -46,6 +48,7 @@ export default class App extends React.Component {
               <ShopTable shopStore={shopStore} minimumRevenue={shopStore.minimumRevenue} />
             </section>
             <section style={{background: '#0ff'}} className="column">
+              <ShopMap shopStore={shopStore} minimumRevenue={shopStore.minimumRevenue} />
             </section>
           </div>
           <div className="columns">

@@ -43,12 +43,16 @@ module.exports = function(env){
                 },
                 {
                     test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-                    loader: 'url-loader?limit=100000'
-                }               
+                    loader: 'url-loader?limit=100000&outputPath=fonts/'
+                },{
+                    test: /\.(png|jpg|gif)$/,
+                    exclude: /node_modules/,
+                    loader: 'file-loader'
+                  }       
             ],
         },
         resolve: {
-            extensions: ['*', '.js', '.jsx', '.css'],
+            extensions: ['*', '.js', '.jsx', '.css','.png'],
         },
         output: {
             path: __dirname + '/dist',
