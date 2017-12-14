@@ -13,8 +13,12 @@ let shopStore = new ShopStore();
 @observer
 export default class App extends React.Component {
 
-  handleFilterTextChange(event) {
-    shopStore.filter = event.target.value
+  handleFilterName(event) {
+    shopStore.filter.name = event.target.value
+  }
+  handleFilterRevenue(event){
+    console.info(event.target.value)
+    shopStore.filter.revenue = event.target.value
   }
 
   render() {
@@ -27,7 +31,7 @@ export default class App extends React.Component {
           <div className="columns content-end">
             <section style={{background: '#f0f'}} className="column">
               <div className="has-icons-right">
-                <input type="search" placeholder="Pesquisa" value={shopStore.filter} onChange={this.handleFilterTextChange.bind(this)} />
+                <input type="search" placeholder="Pesquisa" value={shopStore.filter.name} onChange={this.handleFilterName.bind(this)} />
                 <span className="icon is-small is-right">
                   <i className="fa fa-search"></i>
                 </span>
@@ -35,7 +39,7 @@ export default class App extends React.Component {
             </section>
             <section style={{background: '#00f'}} className="column">
               <label htmlFor="faturamento"> Faturamento mínimo esperado</label>
-              <input type="text" id="faturamento"/>
+              <input id="faturamento" type="number" placeholder="Pesquisa" value={shopStore.filter.revenue} onChange={this.handleFilterRevenue.bind(this)} />
             </section>
           </div>
           <div className="columns">
