@@ -3,7 +3,11 @@ import './styles/main.scss';
 import 'font-awesome/css/font-awesome.css';
 import 'normalize.css/normalize.css';
 import './App.scss';
+import { ShopTable } from './components';
+import {observer} from 'mobx-react';
 
+import ShopStore from './stores/ShopStore';
+@observer
 export default class App extends React.Component {
   render() {
     return (
@@ -28,6 +32,8 @@ export default class App extends React.Component {
           </div>
           <div className="columns">
             <section style={{background: '#f00', height: '250px'}} className="column">
+            <section style={{background: '#f00', minHeight: '250px'}} className="column">
+              <ShopTable shopStore={shopStore} />
             </section>
             <section style={{background: '#0ff'}} className="column">
             </section>
