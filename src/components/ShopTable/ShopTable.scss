@@ -1,0 +1,14 @@
+@import '../../styles/variables';
+
+.table{
+    text-align: left;
+    tr{
+        th,
+        td{
+            @at-root &:last-child{
+                text-align: right;
+            }
+        }
+
+    }
+}

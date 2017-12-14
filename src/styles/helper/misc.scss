@@ -1,0 +1,43 @@
+$icon-wrapper : 1em;
+
+.content-end{
+    align-items: flex-end;
+}
+
+.is-left {
+    left: 0;
+}
+.is-right {
+    right: 0;
+}
+
+.has-icons-left,
+.has-icons-right {
+    position: relative;
+    input{
+        width: 100%;
+    }
+    .icon {
+        line-height: calc( #{$icon-wrapper} + #{$padding-y * 2} + 2px);
+        width: calc( #{$icon-wrapper} + #{$padding-y * 2} + 2px);
+        height: calc( #{$icon-wrapper} + #{$padding-y * 2} + 2px);
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        z-index: 4;
+    }
+}    
+.has-icons-right input{
+    padding-right: $icon-wrapper;
+}
+.has-icons-left input{
+    padding-left: $icon-wrapper;
+}
+
+.squad{
+    >*{
+        border: $border;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+    }
+}

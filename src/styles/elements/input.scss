@@ -1,0 +1,16 @@
+$icon-wrapper : 1em;
+
+input{
+    &[type="number"],
+    &[type="text"],
+    &[type="search"]{
+        width: 100%;
+        padding: $padding;
+        border-radius: $border-radius;
+        border: $border;
+        box-shadow: 0px 1px 1px 0px darken( $border-color, 10% );
+        &:focus{
+            outline-color: $primary;        
+        }
+    }    
+}

@@ -1,0 +1,20 @@
+.table{
+    border-spacing: 0px;    
+    width: 100%;
+    background: #fff;
+    tr{
+        &:hover{
+            th,
+            td{
+                background: $bg;
+            }
+        }
+        th,
+        td{
+            padding: $padding;
+        }
+        td{
+            border-top: $border;     
+        }
+    }
+}
