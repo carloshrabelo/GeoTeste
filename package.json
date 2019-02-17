@@ -1,7 +1,7 @@
 {
-  "name": "gfn_frontend_challenge_carlos-oliveira",
+  "name": "Teste com mapa",
   "version": "1.0.0",
-  "description": "![React+Webpack3](http://i.imgur.com/dPVmyuv.png)",
+  "description": "Teste com mapa",
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
