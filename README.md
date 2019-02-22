@@ -1,4 +1,4 @@
-# Desafio Front-End Geofusion
+# Desafio Front-End Geo
 
 Aplicação fora desenvolvida com [NodeJs](https://nodejs.org/en/) na versão 9.2.1 , é crucial que tenha-se instalado o node na maquina para se gerar o build da aplicação, tendo sido usado o [Yarn](https://yarnpkg.com/pt-BR/) como gerenciador de dependências 
 

@@ -1,5 +1,5 @@
 {
-  "name": "Teste com mapa",
+  "name": "GeoTeste",
   "version": "1.0.0",
   "description": "Teste com mapa",
   "main": "webpack.config.js",
@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server -d --env.platform=default --progress --hot",
     "build": "cross-env webpack --hot  --env.prod=true",
+    "deploy": "rm -rf node_modules/.cache && yarn build && touch dist/.nojekyll && git add dist/ && git commit -m \"Deploy Application to gh-pages\" && git subtree push --prefix out origin gh-pages",
     "start": "npm run dev"
   },
   "babel": {
@@ -21,14 +22,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/carloshrabelo/gfn_frontend_challenge_Carlos-Oliveira.git"
+    "url": "git+https://github.com/carloshrabelo/GeoTeste.git"
   },
   "author": "Carlos Henrique Rabelo de Oliveira",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/carloshrabelo/gfn_frontend_challenge_Carlos-Oliveira/issues"
+    "url": "https://github.com/carloshrabelo/GeoTeste/issues"
   },
-  "homepage": "https://gitlab.com/carloshrabelo/gfn_frontend_challenge_Carlos-Oliveira#README",
+  "homepage": "https://github.com/carloshrabelo/GeoTeste#README",
   "devDependencies": {
     "babel-core": "^6.25.0",
     "babel-eslint": "^7.2.3",
