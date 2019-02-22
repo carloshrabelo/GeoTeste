@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server -d --env.platform=default --progress --hot",
     "build": "cross-env webpack --hot  --env.prod=true",
-    "deploy": "rm -rf node_modules/.cache && yarn build && touch dist/.nojekyll && git add dist/ && git commit -m \"Deploy Application to gh-pages\" && git subtree push --prefix out origin gh-pages",
+    "deploy": "rm -rf node_modules/.cache && yarn build && touch dist/.nojekyll && git add dist/ && git commit -m \"Deploy Application to gh-pages\" && git subtree push --prefix dist origin gh-pages",
     "start": "npm run dev"
   },
   "babel": {
